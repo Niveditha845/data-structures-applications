@@ -13,10 +13,11 @@ NODE insertend(NODE start, int row,int col,int item)
     temp=(NODE)malloc(sizeof(struct node));
     temp->row=row;
     temp->col=col;
+    temp->data=item;
     temp->next=NULL;
     temp->prev=NULL;
     if(start==NULL)
-        return start;
+        return temp;
     cur=start;
     while(cur->next!=NULL)
         cur=cur->next;
@@ -67,7 +68,7 @@ int main()
     int i,j,m,n,item;
     NODE start=NULL;
     printf("\n read order of matrix\n");
-    scanf("%d %d",&n,&m);
+    scanf("%d %d",&m,&n);
     printf("\n read elements\n");
     for(i=1;i<=m;i++)
     {
